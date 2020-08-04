@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+# Configured to refuse to authenticate using a password
+Host *
+     IdentityFile ~/.ssh/holberton
+     PasswordAuthentication no
