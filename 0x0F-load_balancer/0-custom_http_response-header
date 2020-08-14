@@ -5,7 +5,7 @@ not_found="error_page 404 /custom_404.html;\nlocation = /custom_404.html {\n\tro
 header="\tadd_header X-Served-By: $HOSTNAME;\n"
 sudo apt-get -y update
 sudo apt-get -y install nginx
-echo "Holberton School" | sudo tee /var/www/html/index.nginx-debian.html
+echo "Holberton School" | sudo tee /usr/share/nginx/html/index.html
 sudo sed -i "46i $new" /etc/nginx/sites-available/default
 echo "Ceci n'est pas une page" | sudo tee /usr/share/nginx/html/custom_404.html
 sudo sed -i "52i $not_found" /etc/nginx/sites-available/default
