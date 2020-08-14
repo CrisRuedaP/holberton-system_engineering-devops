@@ -6,5 +6,5 @@ sudo apt-get -y update
 sudo apt-get -y install software-properties-common
 sudo add-apt-repository ppa:vbernat/haproxy-1.8
 apt-get install -y haproxy=1.8.\*
-sudo i "39a $front $back" /etc/haproxy/haproxy.cfg
+sudo sed -i "39a $front $back" /etc/haproxy/haproxy.cfg
 sudo service haproxy restart
