@@ -10,4 +10,4 @@ sudo sed -i "46i $new" /etc/nginx/sites-available/default
 echo "Ceci n'est pas une page" | sudo tee /usr/share/nginx/html/custom_404.html
 sudo sed -i "52i $not_found" /etc/nginx/sites-available/default
 sudo sed -i "45i $header" /etc/nginx/sites-available/default
-sudo service nginx start
+sudo service nginx restart
