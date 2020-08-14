@@ -5,4 +5,5 @@ back="\nbackend webservers\n\tbalance roundrobin\n\tserver 1481-web-01 35.237.14
 sudo apt-get -y update
 sudo apt-get -y install haproxy
 sudo sed -i "39a $front $back" /etc/haproxy/haproxy.cfg
+sudo sed i "10a \nENABLED=1" /etc/haproxy/haproxy
 sudo service haproxy restart
