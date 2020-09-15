@@ -10,8 +10,9 @@ if __name__ == "__main__":
     employees = requests.get(url + '/users/').json()
 
     data = {}
-    all_tasks = []
+    filename = 'todo_all_employees.json'
     for user in employees:
+        all_tasks = []
         user_id = user.get('id')
         username = user.get('username')
         amount = requests.get(
@@ -23,7 +24,5 @@ if __name__ == "__main__":
             records["completed"] = task.get("completed")
             all_tasks.append(records)
         data[user_id] = all_tasks
-
-    filename = 'todo_all_employees.json'
     with open(filename, 'w') as file:
         json.dump(data, file)
