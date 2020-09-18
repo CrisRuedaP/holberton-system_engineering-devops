@@ -9,14 +9,11 @@ def top_ten(subreddit):
     """
     Query the Reddit API and print the titles of the top 10 hot posts
     """
-    url = 'https://www.reddit.com/r/{}/hot.json'.format(subreddit)
-    param = {'limit': 10}
+    url = "https://www.reddit.com/r/{}/hot.json?limit=10".format(subreddit)
     header = {'user-agent': 'betty_hbtn'}
     r = requests.get(url, headers=header)
 
-    if r.status_code is not 200:
-        print('None')
-    elif 'data' not in r.json():
+    if r.status_code >= 300:
         print('None')
     else:
         r = r.json()
