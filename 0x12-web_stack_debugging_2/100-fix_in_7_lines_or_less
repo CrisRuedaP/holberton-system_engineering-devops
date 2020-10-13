@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 #Optimizing script 1
-sudo pkill apache2
-sed -i 's/80/8080/' /etc/nginx/sites-enabled/default
-sudo chown nginx:nginx /etc/nginx/nginx.conf
-sudo chmod 644 /etc/nginx/nginx.conf
-sudo -u nginx service nginx restart
+pkill -f apache2
+chmod 644 /etc/nginx/nginx.conf
+sudo sed -i 's/80/8080/g' /etc/nginx/sites-available/default
+sudo -u nginx nginx
+sudo service nginx start
